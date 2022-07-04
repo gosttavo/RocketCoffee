@@ -32,12 +32,11 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8rem;
 }
 
 ul{
     display: flex;
-    width: 30rem;
+    width: 26rem;
     justify-content: space-between;
     list-style: none;
     align-items: center;
@@ -66,6 +65,10 @@ div>button{
 #logo{
     height: 4rem;
     width: 4rem;
+}
+
+#logo-mobile{
+    display: none;
 }
  
 #btn{
@@ -142,21 +145,19 @@ div>button{
     display: none;
 }
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1350px){
     header{
         border-bottom: 1px solid #29292E;
-        padding: 4rem;
-        background-image: url(/assets/logo-mobile.svg) no-repeat;
+        padding: 2.4rem;
     }
-
+        
     nav>button{
         display: none;
     }
-
     nav>ul{
         display: none;
     }
-    
+
     div>button{
         display: flex;
         justify-content: center;
@@ -164,7 +165,31 @@ div>button{
     }
 
     #logo{
-        width: 70%;
+        display: none;
+    }
+
+    #logo-mobile{
+        display: flex;
+        flex: initial;
+    }
+
+    #btn{
+        width: 10rem;
+    }
+
+    #logo{
+        display: none;
+    }
+ 
+    #mobile-text{
+        padding: 3rem;
+        display: flex;
+        font-size: 2rem;
+        flex-wrap: wrap;
+    }
+
+    #img-coffee{
+        display: none;
     }
 
     #mobile-items{
@@ -172,17 +197,6 @@ div>button{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-
-    #mobile-text{
-        padding: 3rem;
-        display: flex;
-        font-size: 2.8rem;
-        flex-wrap: wrap;
-    }
-
-    #img-coffee{
-        display: none;
     }
 
     #btn-mobile{
@@ -195,6 +209,36 @@ div>button{
         font-weight: bold;
         background-color: #000;
         margin-bottom: 3rem;
+    }
+
+    #blur-top{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 720px) {
+    .text, .purple{
+        font-weight: 700;
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .text, .purple{
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    #mobile-text{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .text, .purple{
+        font-weight: 700;
+        font-size: 1rem;
     }
 
 }
