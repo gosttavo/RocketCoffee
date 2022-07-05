@@ -57,21 +57,7 @@ div>button{
     display: none;
 }
 
-#img{
-    position: absolute;
-    left: 25%;
-}
-
-#logo{
-    height: 4rem;
-    width: 4rem;
-}
-
-#logo-mobile{
-    display: none;
-}
- 
-#btn{
+.btn{
     border: 1px solid #8257E5;
     width: 12rem;
     height: 2.5rem;
@@ -80,11 +66,24 @@ div>button{
     color: #fff;
     font-weight: bold;
     background-color: #000;
-    position: absolute;
-    right: 16%;
 }
 
-#img-coffee{
+.btn:hover{
+    transition: .6s;
+    background-color: #8257E5;
+}
+
+.btn-position{
+    position: absolute;
+    right: 18%;
+}
+
+.img{
+    position: absolute;
+    left: 25%;
+}
+
+.img-coffee{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,34 +93,18 @@ div>button{
     right: -50%;
 }
 
-#great-code{
+.great-code{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-#great-coffee{
+.great-coffee{
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-}
-
-#rotated-arrow{
-    transform: rotateY(180deg);
-}
-
-#blur-bottom{
-    position: absolute; bottom: 15%;
-}
-
-#blur-top{
-    position: absolute; top: 0; right: 0;
-}
-
-#blur-mobile{
-    display: none;
 }
 
 .text, .purple{
@@ -141,11 +124,36 @@ div>button{
     text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
 }
 
+#logo{
+    height: 4rem;
+    width: 4rem;
+}
+
+#logo-mobile{
+    display: none;
+}
+
+#rotated-arrow{
+    transform: rotateY(180deg);
+}
+
+#blur-bottom{
+    position: absolute; bottom: 15%;
+}
+
+#blur-top{
+    position: absolute; top: 0; right: 0;
+}
+
+#blur-mobile{
+    display: none;
+}
+
 #mobile-text{
     display: none;
 }
 
-@media only screen and (max-width: 1350px){
+@media only screen and (max-width: 1280px){
     header{
         border-bottom: 1px solid #29292E;
         padding: 2.4rem;
@@ -157,11 +165,30 @@ div>button{
     nav>ul{
         display: none;
     }
-
+    
     div>button{
         display: flex;
         justify-content: center;
         align-self: center;
+    }
+
+    .btn-mobile{
+        margin-bottom: 3rem;
+    }
+
+    .mobile-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mobile-text{
+        display: flex;
+        padding: 3rem;
+        display: flex;
+        font-size: 2rem;
+        flex-wrap: wrap;
     }
 
     #logo{
@@ -173,72 +200,71 @@ div>button{
         flex: initial;
     }
 
-    #btn{
-        width: 10rem;
+    #blur-bottom{
+        bottom: 10%;
     }
 
-    #logo{
-        display: none;
-    }
- 
-    #mobile-text{
-        padding: 3rem;
-        display: flex;
-        font-size: 2rem;
-        flex-wrap: wrap;
+    .text, .purple{
+        font-weight: 700;
+        font-size: 4rem;
     }
 
-    #img-coffee{
-        display: none;
+    .img-coffee{
+        bottom: 6.6rem;
     }
 
-    #mobile-items{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+}
 
-    #btn-mobile{
-        border: 1px solid #8257E5;
-        width: 12rem;
-        height: 2.5rem;
-        padding: .6rem;
-        border-radius: .4rem;
-        color: #fff;
-        font-weight: bold;
-        background-color: #000;
-        margin-bottom: 3rem;
+@media only screen and (max-width: 1024px){
+
+    .img-coffee img{
+         height: 20rem;   
     }
 
     #blur-top{
         display: none;
     }
 
+    #blur-bottom{
+        display: none;
+    }
+
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 768px) {
     .text, .purple{
         font-weight: 700;
         font-size: 3.5rem;
     }
+
+    .img-coffee img{
+        height: 12rem;   
+   }
 }
 
 @media only screen and (max-width: 480px) {
     .text, .purple{
         font-weight: 700;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
-    #mobile-text{
-        font-size: 2rem;
+    .arrow, #rotated-arrow{
+        height: 2rem;
     }
+
+    .img-coffee img{
+        height: 14rem;   
+   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
     .text, .purple{
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 1.6rem;
+    }
+
+    .mobile-text{
+        font-size: 1.2rem;
     }
 
 }
