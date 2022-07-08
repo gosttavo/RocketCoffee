@@ -9,7 +9,7 @@
     --text-color-menu-mobile: #E1E1E6;
   }
 
-*{
+*, ul{
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
@@ -19,13 +19,13 @@
 
 body{
     background: #000;
-    position: relative;
 }
 
 header{
-    padding: 6rem;
+    padding: 4rem;
     display: flex;
     justify-content: center;
+    padding: 6rem;
 }
 
 nav{
@@ -34,33 +34,30 @@ nav{
     align-items: center;
 }
 
-ul{
+div>button, #logo-mobile, #blur-mobile, #mobile-text{
+    display: none;
+}
+
+#menu{
     display: flex;
-    width: 26rem;
     justify-content: space-between;
+    width: 100%;
     list-style: none;
     align-items: center;
+    gap: 1rem
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-a{
+#menu a{
+    display: block;
+    padding: .5rem;
     text-decoration: none;
     color: #FFF;
-}
-
-div>button{
-    display: none;
 }
 
 .btn{
     border: 1px solid #8257E5;
     width: 12rem;
-    height: 2.5rem;
+    height: 2.6rem;
     padding: .6rem;
     border-radius: .4rem;
     color: #fff;
@@ -68,55 +65,20 @@ div>button{
     background-color: #000;
 }
 
+.btn:hover{
+    transition: .6s;
+    background-color: #8257E5;
+}
+
 .btn-position{
     position: absolute;
-    right: 18%;
+    right: 16%;
 }
 
-.img{
-    position: absolute;
-    left: 25%;
-}
-
-.img-coffee{
+#img-coffee{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 13rem;
-    left: -50%;
-    right: -50%;
-}
-
-.great-code{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.great-coffee{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.text, .purple{
-    font-weight: 700;
-    font-size: 5rem;
-}
-
-.text{
-    color: #fff;
-}
-
-.purple{
-    color: #000;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+    left: 50%;
+    transform:translateX(-50%) ;
 }
 
 #logo{
@@ -124,31 +86,60 @@ div>button{
     width: 4rem;
 }
 
-#logo-mobile{
-    display: none;
+#logo-position{
+    position: absolute;
+    left: 24%;
+}
+
+#text-presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#over-text, .text, .purple{
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+#over-text{
+    color: #fff;
+}
+
+#under-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#purple-text{
+    color: #000;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
 }
 
 #rotated-arrow{
     transform: rotateY(180deg);
 }
 
-#blur-bottom{
-    position: absolute; bottom: 15%;
+#img-coffee, #blur-bottom{
+    position: fixed;
+    bottom: 0;
 }
 
 #blur-top{
-    position: absolute; top: 0; right: 0;
+    position: fixed;
+    right: 0;
+    top: -10%;
 }
 
-#blur-mobile{
-    display: none;
-}
-
-#mobile-text{
-    display: none;
-}
+/*---MEDIA QUERIES---*/
 
 @media only screen and (max-width: 1280px){
+
     header{
         border-bottom: 1px solid #29292E;
         padding: 2.4rem;
@@ -157,42 +148,23 @@ div>button{
     nav>button{
         display: none;
     }
-    nav>ul{
-        display: none;
-    }
     
     div>button{
         display: flex;
         justify-content: center;
         align-self: center;
     }
-
-    .btn{
-        position: relative;
-    }
-
-    .btn-mobile{
-        margin-bottom: 3rem;
-    }
-
-    .btn:hover{
-        transition: .6s;
-        background-color: #8257E5;
-    }
-
-    .mobile-items{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    #menu{
+        display: none;
     }
 
     #mobile-text{
         display: flex;
         padding: 3rem;
-        display: flex;
         font-size: 2rem;
-        flex-wrap: wrap;
+        color: #fff;
+        justify-content: center;
+        text-align: center;
     }
 
     #logo{
@@ -204,21 +176,24 @@ div>button{
         flex: initial;
     }
 
-    #blur-bottom{
-        bottom: 10%;
-    }
-
-    .text, .purple{
+    #over-text, #purple-text, .text{
         font-weight: 700;
         font-size: 4rem;
     }
 
-    .arrow{
-        height: 2.8rem;
-    }
-
     .img-coffee{
         bottom: 6.6rem;
+    }
+
+    .btn-mobile{
+        margin-bottom: 3rem;
+    }
+
+    #mobile-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 }
@@ -232,91 +207,64 @@ div>button{
     #blur-top{
         display: none;
     }
-
-    #blur-bottom{
-        display: none;
-    }
-
-    .arrow{
-        height: 2.4rem;
-    }
-
 }
 
-@media only screen and (max-width: 1024px) and (max-height: 600px){
-    .text, .purple{
+@media only screen and (max-width: 768px) {
+
+     #over-text, #purple-text{
         font-weight: 700;
         font-size: 3.5rem;
     }
 
     #mobile-text{
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 
-    .img-coffee img{
-         height: 9.5rem;   
-    }
-
-    #blur-top{
-        display: none;
-    }
-
-    #blur-bottom{
-        display: none;
-    }
-
-    .arrow{
-        height: 2.4rem;
-    }
-
-    .btn-mobile{
-        margin-bottom: 1.6rem;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-    .text, .purple{
-        font-weight: 700;
-        font-size: 3.5rem;
-    }
-
-    .img-coffee img{
-        height: 12rem;   
+    #img-coffee img{
+        height: 18rem;   
    }
 
 }
 
 @media only screen and (max-width: 480px) {
-    .text, .purple{
+
+    .text, #over-text, #purple-text{
         font-weight: 700;
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .arrow, #rotated-arrow{
-        height: 2rem;
+        height: 1.8rem;
     }
 
-    .img-coffee img{
+    #img-coffee img{
         height: 14rem;   
    }
 
-    #mobile-text{
-    font-size: 1.6rem;
-    }
 }
 
 @media only screen and (max-width: 360px) {
-    .text, .purple{
+
+    .text, #over-text, #purple-text{
         font-weight: 700;
-        font-size: 1.6rem;
+        font-size: 2.6rem;
     }
 
     #mobile-text{
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
-    .img-coffee img{
-        height: 10rem;   
+    .arrow, #rotated-arrow{
+        height: 1.6rem;
+    }
+    
+   #blur-mobile{
+    display: flex;
+    position: fixed;
+    bottom: 0;
    }
+
 }
+
+
+
